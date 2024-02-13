@@ -1,6 +1,18 @@
 <h4>Agregar personaje</h4>
 <form class="row mx-4">
-  <input type="text" name="name" class="my-2" placeholder="Goku" />
-  <input type="number" name="poder" class="my-2" placeholder="10000" />
+  <input
+    type="text"
+    name="name"
+    [value]="character.name"
+    class="my-2"
+    placeholder="Goku"
+  />
+  <input
+    type="number"
+    name="poder"
+    [value]="character.power"
+    class="my-2"
+    placeholder="10000"
+  />
   <input type="submit" value="Enviar" class="my-2 btn btn-primary" />
 </form>
