@@ -5,6 +5,8 @@
     <dbz-list [characterList]="characters"></dbz-list>
   </div>
   <div class="col px-4">
-    <dbz-form-heroes></dbz-form-heroes>
+    <dbz-form-heroes
+      (onNewCharacter)="onNewCharacter($event)"
+    ></dbz-form-heroes>
   </div>
 </div>

@@ -1,18 +1,19 @@
 <h4>Agregar personaje</h4>
-<form class="row mx-4">
+<form class="row mx-4" (submit)="emitCharacter()">
   <input
     type="text"
     name="name"
-    [value]="character.name"
+    [(ngModel)]="character.name"
     class="my-2"
     placeholder="Goku"
   />
   <input
     type="number"
     name="poder"
-    [value]="character.power"
+    [(ngModel)]="character.power"
     class="my-2"
     placeholder="10000"
   />
   <input type="submit" value="Enviar" class="my-2 btn btn-primary" />
+  <pre>{{ character | json }}</pre>
 </form>
