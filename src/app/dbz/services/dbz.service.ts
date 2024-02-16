@@ -8,7 +8,7 @@ console.log(v4());
 export class DbzService {
   public deletedCharacter?: string;
 
-  onNewCharacter(character: Character): void {
+  addCharacter(character: Character): void {
     this.characters.push({ ...character });
   }
 
