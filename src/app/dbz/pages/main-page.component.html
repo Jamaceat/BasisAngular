@@ -3,23 +3,24 @@
 <div class="row">
   <div class="col">
     <div>
-      <div *ngIf="deletedCharacter != undefined">
+      <div *ngIf="dbzService.deletedCharacter != undefined">
         <h3>Eliminado</h3>
         <strong style="color: cadetblue"
-          >{{ deletedCharacter.index - 1 }}.</strong
+          >{{ dbzService.deletedCharacter.index - 1 }}.</strong
         >
-        <span>{{ deletedCharacter.name }}</span
-        >-<strong>Power:</strong><span>{{ deletedCharacter!.power }}</span>
+        <span>{{ dbzService.deletedCharacter.name }}</span
+        >-<strong>Power:</strong
+        ><span>{{ dbzService.deletedCharacter!.power }}</span>
       </div>
     </div>
     <dbz-list
-      [characterList]="characters"
-      (onDeleteCharacter)="deletedCharacterReceived($event)"
+      [characterList]="dbzService.characters"
+      (onDeleteCharacter)="dbzService.deletedCharacterReceived($event)"
     ></dbz-list>
   </div>
   <div class="col px-4">
     <dbz-form-heroes
-      (onNewCharacter)="onNewCharacter($event)"
+      (onNewCharacter)="dbzService.onNewCharacter($event)"
     ></dbz-form-heroes>
   </div>
 </div>
