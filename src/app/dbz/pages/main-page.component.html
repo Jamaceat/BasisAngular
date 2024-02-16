@@ -2,7 +2,20 @@
 <hr />
 <div class="row">
   <div class="col">
-    <dbz-list [characterList]="characters"></dbz-list>
+    <div>
+      <div *ngIf="deletedCharacter != undefined">
+        <h3>Eliminado</h3>
+        <strong style="color: cadetblue"
+          >{{ deletedCharacter.index - 1 }}.</strong
+        >
+        <span>{{ deletedCharacter.name }}</span
+        >-<strong>Power:</strong><span>{{ deletedCharacter!.power }}</span>
+      </div>
+    </div>
+    <dbz-list
+      [characterList]="characters"
+      (onDeleteCharacter)="deletedCharacterReceived($event)"
+    ></dbz-list>
   </div>
   <div class="col px-4">
     <dbz-form-heroes
