@@ -5,17 +5,13 @@
     <div>
       <div *ngIf="dbzService.deletedCharacter != undefined">
         <h3>Eliminado</h3>
-        <strong style="color: cadetblue"
-          >{{ dbzService.deletedCharacter.index - 1 }}.</strong
-        >
-        <span>{{ dbzService.deletedCharacter.name }}</span
-        >-<strong>Power:</strong
-        ><span>{{ dbzService.deletedCharacter!.power }}</span>
+        <strong>id del personaje eliminado:</strong>
+        <p>{{ dbzService.deletedCharacter }}</p>
       </div>
     </div>
     <dbz-list
       [characterList]="dbzService.characters"
-      (onDeleteCharacter)="dbzService.deletedCharacterReceived($event)"
+      (onDeleteCharacter)="dbzService.deletedCharacterById($event)"
     ></dbz-list>
   </div>
   <div class="col px-4">

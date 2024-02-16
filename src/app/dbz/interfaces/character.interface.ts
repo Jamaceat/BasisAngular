@@ -1,8 +1,6 @@
 export interface Character {
+  id: string;
   name: string;
   power: number;
-}
-
-export interface CharacterIndex extends Character {
-  index: number;
+  index?: number;
 }
